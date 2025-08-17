@@ -957,3 +957,31 @@ body {
   color: #333;
   font-size: 0.95rem;
 }
+
+
+/* For tablets */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    text-align: center;
+  }
+  .menu {
+    flex-direction: column;
+  }
+}
+
+/* For phones */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
+  p {
+    font-size: 16px;
+  }
+  .button {
+    width: 100%;
+  }
+}
+
+
+
