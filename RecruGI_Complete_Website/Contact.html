@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RecruGI - Contact</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="dark">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/images/recrugi-logo.png" alt="RecruGI Logo" class="logo-img" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle">🌙</button>
+  </header>
+
+ <video autoplay muted loop playsinline class="bg-video">
+    <source src="assets/videos/contact1.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+
+
+  <!-- Contact Section -->
+  <section class="contact-section fadeInUp">
+    <div class="contact-bg">
+      <div class="overlay"></div>
+    </div>
+    <div class="contact-content">
+      <h1>Get in Touch</h1>
+      <p>If you have any questions, feedback, or partnership inquiries, feel free to reach out. We’d love to hear from you.</p>
+
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <input type="text" name="name" required placeholder="Your Name" />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" required placeholder="Your Email" />
+        </div>
+        <div class="form-group">
+          <input type="tel" name="phone" required placeholder="Your Mobile Number" />
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" required placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- WhatsApp & Chatbot (Optional) -->
+  <div id="whatsapp-chat">
+    <img src="assets/images/whatsapp.svg" alt="WhatsApp" />
+    <span>Chat with us</span>
+  </div>
+
+  <button id="chatbot-toggle">💬</button>
+  <div id="chatbot-widget">
+    <div class="chat-header">RecruGI Bot</div>
+    <div class="chat-body">
+      👋 Hi there! How can we help you today?
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="js/script.js" defer></script>
+</body>
+</html>

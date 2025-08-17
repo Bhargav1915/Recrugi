@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RecruGI - Certificate Validator</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="dark">
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/images/recrugi-logo.png" alt="RecruGI Logo" class="logo-img" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="certificate-validator.html" class="active">Validate Certificate</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle">🌙</button>
+  </header>
+
+  <section class="curved-section page-section">
+    <h2>Certificate ID Validation</h2>
+    <div class="section-text">
+      <p>Enter your Certificate ID below to check its authenticity. This ensures the certificate issued is valid and issued officially by RecruGI.</p>
+    </div>
+
+    <form id="validate-form" class="contact-form" onsubmit="return validateCertificate(event)">
+      <input type="text" id="certID" placeholder="Enter Certificate ID" required />
+      <button type="submit">Validate</button>
+    </form>
+
+    <div id="result" style="margin-top: 2rem; font-size: 1.2rem;"></div>
+  </section>
+
+  <script>
+    const endpoint = "https://script.google.com/macros/s/your-google-script-id/exec"; // Replace this with your deployed Apps Script URL
+
+    function validateCertificate(e) {
+      e.preventDefault();
+      const id = document.getElementById('certID').value.trim();
+      const resultDiv = document.getElementById('result');
+
+      resultDiv.textContent = "Checking...";
+
+      fetch(`${endpoint}?id=${id}`)
+        .then(response => response.text())
+        .then(data => {
+          if (data === "valid") {
+            resultDiv.innerHTML = `<span style="color: #00ffae;">✅ Valid Certificate ID</span>`;
+          } else {
+            resultDiv.innerHTML = `<span style="color: #ff5555;">❌ Invalid Certificate ID</span>`;
+          }
+        })
+        .catch(() => {
+          resultDiv.innerHTML = `<span style="color: #ff5555;">⚠️ Error validating. Try again later.</span>`;
+        });
+    }
+  </script>
+</body>
+</html>
