@@ -959,29 +959,51 @@ body {
 }
 
 
-/* For tablets */
+
+
+
+
+.container {
+  width: 90%;   /* instead of width: 1200px; */
+  max-width: 1200px;
+  margin: auto;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Tablets */
 @media (max-width: 768px) {
-  .container {
-    padding: 10px;
+  .navbar ul {
+    flex-direction: column;
     text-align: center;
   }
-  .menu {
-    flex-direction: column;
-  }
 }
 
-/* For phones */
+/* Mobile */
 @media (max-width: 480px) {
   h1 {
-    font-size: 22px;
+    font-size: 20px;
   }
-  p {
-    font-size: 16px;
-  }
-  .button {
-    width: 100%;
+  .container {
+    padding: 10px;
   }
 }
-
-
-
